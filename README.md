@@ -1,2 +1,2 @@
 # quick_savannah
-Twchnical assessment
+Technical assessment
