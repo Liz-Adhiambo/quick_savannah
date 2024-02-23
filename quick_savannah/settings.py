@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from decouple import config
 from datetime import timedelta
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +28,18 @@ SECRET_KEY = config("securitykey", default='test')
 DEBUG = True
 
 ALLOWED_HOSTS = ['web-production-ca6f.up.railway.app','127.0.0.1']
+
+DATABASE_URL=config('database_url')
+
+
+DATABASES = {
+       'default': dj_database_url.config(
+           default=DATABASE_URL, conn_max_age=1000
+       )
+   }
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 
 # Application definition
@@ -84,17 +97,17 @@ WSGI_APPLICATION = 'quick_savannah.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': config("db_engine", default='django.db.backends.sqlite3'),
-        'NAME': config('db_name', default='db.sqlite3'),
-        'USER': config("db_user", default=''),
-        'PASSWORD': config("db_password", default=''),
-        'HOST': config("db_host", default=''),
-        'PORT': config("db_port", default='')
+# DATABASES = {
+#     'default': {
+#         'ENGINE': config("db_engine", default='django.db.backends.sqlite3'),
+#         'NAME': config('db_name', default='db.sqlite3'),
+#         'USER': config("db_user", default=''),
+#         'PASSWORD': config("db_password", default=''),
+#         'HOST': config("db_host", default=''),
+#         'PORT': config("db_port", default='')
 
-    }
-}
+#     }
+# }
 
 
 AUTHENTICATION_BACKENDS = [
