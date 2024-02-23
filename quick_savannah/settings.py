@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['web-production-ca6f.up.railway.app','127.0.0.1']
 
-DATABASE_URL=config('database_url')
+DATABASE_URL=config('DATABASE_URL')
 
 
 DATABASES = {
@@ -38,8 +38,8 @@ DATABASES = {
        )
    }
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
 
 # Application definition
