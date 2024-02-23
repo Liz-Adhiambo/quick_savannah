@@ -54,7 +54,6 @@ python manage.py migrate
 python manage.py test
 ```
 ### Usage
-## Usage
 
 This section provides details on how to interact with the API, including endpoints for user signup and managing customers and orders.
 
@@ -104,7 +103,6 @@ Place a new order and trigger an SMS notification to the customers number if ord
 
 Data Example:
 ``` json
-Copy code
 {
   "customer": 1,
   "item": "Mazda cx5",
