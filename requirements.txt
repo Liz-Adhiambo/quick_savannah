@@ -7,12 +7,14 @@ contextlib2==21.6.0
 cryptography==42.0.4
 defusedxml==0.7.1
 dj-rest-auth==5.0.2
-Django==4.2.10
+Django==5.0.2
 django-allauth==0.61.1
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.3.1
+gunicorn==21.2.0
 idna==3.6
 oauthlib==3.2.2
+packaging==23.2
 pycparser==2.21
 PyJWT==2.8.0
 python-decouple==3.8
